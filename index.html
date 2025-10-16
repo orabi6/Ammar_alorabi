@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-i18n="titles.home"></title>
+<title data-i18n="titles.home">Ammar Alorabi</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
@@ -34,6 +34,7 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 </head>
 <body>
 <div class="lang-toggle" id="langToggle">AR | EN</div>
+
 <header>
   <nav class="nav">
     <a href="index.html" class="nav-item" data-i18n="nav.home"></a>
@@ -43,13 +44,21 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     <a href="services.html" class="nav-item" data-i18n="nav.services"></a>
   </nav>
 </header>
+
 <main class="container">
   <div class="header-center">
     <img src="assets/profile.jpg" alt="Ammar" class="avatar" loading="eager">
-    <h1 class="name">Ammar Alorabi <span class="sep">|</span> Digital Marketer & E-Commerce Manager</h1>
+
+    <h1 class="name" id="nameTitle">Ammar Alorabi <span class="sep">|</span> Digital Marketer & E-Commerce Manager</h1>
+
     <p class="subtitle" data-i18n="home.subtitle"></p>
+
     <a class="btn-cv" href="assets/Ammar_Alorabi_CV.pdf" download data-i18n="home.download">Download CV</a>
-    <div class="about"><p data-i18n="home.about"></p></div>
+
+    <div class="about">
+      <p data-i18n="home.about"></p>
+    </div>
+
     <div class="contact" aria-label="contact">
       <p>📞 Contact Numbers:</p>
       <p><a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a></p>
@@ -59,6 +68,37 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     </div>
   </div>
 </main>
+
 <footer class="footer">© 2025 Ammar Alorabi</footer>
+
+<script>
+const langToggle = document.getElementById('langToggle');
+let currentLang = 'en';
+
+const translations = {
+  en: {
+    name: "Ammar Alorabi <span class='sep'>|</span> Digital Marketer & E-Commerce Manager",
+    contactTitle: "📞 Contact Numbers:",
+    emailTitle: "✉️ Email:"
+  },
+  ar: {
+    name: "عمار العرابي <span class='sep'>|</span> مسوّق رقمي ومدير متاجر إلكترونية",
+    contactTitle: "📞 أرقام التواصل:",
+    emailTitle: "✉️ البريد الإلكتروني:"
+  }
+};
+
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  document.documentElement.lang = currentLang;
+
+  const t = translations[currentLang];
+  document.getElementById('nameTitle').innerHTML = t.name;
+  document.querySelector('.contact p:nth-child(1)').innerHTML = t.contactTitle;
+  document.querySelector('.contact p:nth-child(5)').innerHTML = t.emailTitle;
+
+  langToggle.textContent = currentLang === 'en' ? 'AR | EN' : 'EN | AR';
+});
+</script>
 </body>
 </html>
