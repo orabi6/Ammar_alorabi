@@ -1,0 +1,93 @@
+{
+  "titles": {
+    "home": "Home | Ammar Alorabi",
+    "experience": "Experience | Ammar Alorabi",
+    "education": "Education | Ammar Alorabi",
+    "certificates": "Certificates | Ammar Alorabi",
+    "services": "Services | Ammar Alorabi"
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "education": "Education",
+    "certificates": "Certificates",
+    "services": "Services"
+  },
+  "home": {
+    "title": "Digital Marketing & E‑Commerce Manager",
+    "subtitle": "I'm Ammar Alorabi — a digital marketer and e‑commerce manager with experience in paid campaigns, store optimization, SEO, customer success, and operations.",
+    "download_ar": "تحميل السيرة الذاتية",
+    "download_en": "Download CV (EN)",
+    "about_title": "About",
+    "about_text": "I run end‑to‑end online stores: campaign planning & execution, copywriting, product page CRO, inventory & order ops, and performance reporting."
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "role": "E‑Commerce Store Manager — Oud Center",
+        "meta": "KSA · 2021–2023",
+        "desc": "Ran operations & ads, improved conversions, and led customer support."
+      },
+      {
+        "role": "Operations Manager — Bait Al‑Biryani",
+        "meta": "KSA · 2019–2021",
+        "desc": "Managed inventory, teams, and quality standards."
+      },
+      {
+        "role": "Freelance Digital Marketer",
+        "meta": "EG · 2023–Present",
+        "desc": "Social ads (TikTok/Facebook), SEO, and performance reporting."
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "degree": "Bachelor of Business Administration",
+        "meta": "Shaqra University · KSA",
+        "desc": "Focus on management & marketing."
+      },
+      {
+        "degree": "English Language Certificate",
+        "meta": "British Council",
+        "desc": "Level A2 with practical usage in work contexts."
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Certificates",
+    "items": [
+      {
+        "name": "Digital Marketing Certificate",
+        "meta": "—",
+        "desc": "Digital marketing fundamentals, analytics, and KPIs."
+      },
+      {
+        "name": "SEO & Store Optimization Courses",
+        "meta": "—",
+        "desc": "Product page SEO and UX optimization."
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "title": "Paid Ads Management",
+        "desc": "Planning, setup, and measurement for FB/IG/TikTok ads."
+      },
+      {
+        "title": "E‑Commerce CRO/SEO",
+        "desc": "Optimize product pages, site speed, and checkout UX."
+      },
+      {
+        "title": "Ops & Customer Success",
+        "desc": "Orders, inventory, and CSAT workflows."
+      }
+    ],
+    "cta_ar": "اطلب عرض سعر",
+    "cta_en": "Get a Quote"
+  }
+}

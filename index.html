@@ -1,66 +1,108 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ammar Alorabi | Digital Marketing & E-Commerce Manager</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-body {
-  font-family: 'Tajawal', sans-serif;
-  background: #0d1117;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  direction: rtl;
-}
-h1 { font-size: 28px; margin-bottom: 10px; }
-h2 { font-size: 22px; margin-bottom: 20px; }
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-.contact-info a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #161b22;
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  width: 280px;
-  font-size: 16px;
-  direction: ltr;
-}
-.contact-info a:hover { background: #238636; }
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="titles.home"></title>
+  <meta name="description" content="Ammar Alorabi — Digital Marketing & E‑Commerce Manager portfolio" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/profile.jpg">
+  <style>
+    :root {
+      --bg: #0b0f14; --panel: #0f1520; --text: #e5e7eb; --muted: #9aa4b2; --accent: #22c55e; --link:#93c5fd;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text);
+      font-family:'Tajawal', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; }
+    a { color:var(--link); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .container { max-width:1100px; margin:0 auto; padding:0 16px; }
+    header { position:sticky; top:0; z-index:10; backdrop-filter:blur(6px);
+      background:rgba(11,15,20,0.7); border-bottom:1px solid rgba(255,255,255,0.06); }
+    .nav { display:flex; gap:16px; align-items:center; height:64px; }
+    .brand { font-weight:700; }
+    .spacer { flex:1; }
+    .nav-item { padding:8px 12px; border-radius:9999px; font-weight:500; opacity:.9 }
+    .nav-item.active { background: var(--panel); border:1px solid rgba(255,255,255,.06); opacity:1 }
+    main { padding:28px 0 56px; }
+    .card { background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:20px;
+             padding:22px; margin-bottom:22px; }
+    .grid { display:grid; grid-template-columns:1.2fr .8fr; gap:24px; }
+    .avatar-wrap { display:flex; justify-content:flex-end; align-items:flex-start; }
+    .avatar { width:180px; height:180px; border-radius:50%; object-fit:cover; display:block; background:#111; }
+    .buttons { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:12px; font-weight:600;
+            background:#1f2937; border:1px solid rgba(255,255,255,.06); }
+    .btn:hover { filter:brightness(1.1); }
+    .btn.primary { background:var(--accent); color:#04140a; border-color:transparent; }
+    .section-title { margin:0 0 8px; font-size:22px; }
+    .muted { color:var(--muted); }
+    .list { display:grid; gap:14px; }
+    .item { padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.06); background:#0e1420; }
+    .row { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .links { display:flex; gap:12px; flex-wrap:wrap; }
+    .tag { padding:4px 10px; border-radius:999px; background:#151b28; border:1px solid rgba(255,255,255,.06); font-size:13px }
+    footer { text-align:center; opacity:.8; font-size:14px; padding: 22px 0; }
+    .rtl { direction: rtl; text-align: start; }
+    /* Language toggle floating button */
+    .lang-toggle { position:fixed; top:10px; right:12px; z-index:20; font-weight:700;
+      background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+      padding:6px 10px; border-radius:999px; user-select:none; cursor:pointer; }
+    .lang-toggle:hover { background: rgba(255,255,255,0.12); }
+    @media (max-width: 860px) { .grid { grid-template-columns:1fr; } .avatar-wrap { justify-content:flex-start; } }
+  </style>
+  <script defer src="assets/i18n/i18n.js"></script>
 </head>
 <body>
-  <img src="assets/profile.jpg" alt="Ammar Alorabi" class="profile-pic">
-  <h1>Ammar Alorabi | مدير تسويق رقمي وإدارة متاجر إلكترونية</h1>
-  <h2>Digital Marketing & E-Commerce Manager</h2>
-  <p>متخصص في التسويق الرقمي وإدارة المتاجر الإلكترونية، بخبرة في تحسين محركات البحث (SEO) وإدارة الحملات الإعلانية على فيسبوك وإنستغرام وتيك توك، وتحليل الأداء لزيادة المبيعات وبناء حضور قوي على الإنترنت.</p>
-  <div class="contact-info">
-    <a href="https://wa.me/201515829936" target="_blank">+20 151 582 9936 💬</a>
-    <a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599 💬</a>
-    <a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com 📧</a>
-    <a href="https://www.linkedin.com/in/ammaralorabi" target="_blank">LinkedIn 🔗</a>
-    <a href="https://mostaql.com/u/ammaralorabi" target="_blank">Mostaql 💼</a>
-    <a href="https://khamsat.com/user/amar_or" target="_blank">Khamsat 💬</a>
-    <a href="https://baaeed.com/u/amaror" target="_blank">Baaeed 🌍</a>
-    <a href="https://www.facebook.com/profile.php?id=61582382093773" target="_blank">Facebook 📘</a>
-    <a href="Ammar_Alorabi_CV.pdf" download>تحميل السيرة الذاتية 📄 | Download CV 📄</a>
+  <div class="lang-toggle" id="langToggle">AR | EN</div>
+  <header>
+    <div class="container nav">
+      <div class="brand">Ammar Alorabi</div>
+      <div class="spacer"></div>
+      <a href="index.html" class="nav-item" data-i18n="nav.home"></a><a href="experience.html" class="nav-item" data-i18n="nav.experience"></a><a href="education.html" class="nav-item" data-i18n="nav.education"></a><a href="certificates.html" class="nav-item" data-i18n="nav.certificates"></a><a href="services.html" class="nav-item" data-i18n="nav.services"></a>
+    </div>
+  </header>
+  <main class="container">
+    
+<section class="card grid">
+  <div>
+    <h1 class="section-title" data-i18n="home.title"></h1>
+    <p class="muted" data-i18n="home.subtitle"></p>
+    <div class="buttons">
+      <a class="btn primary" href="assets/Ammar_Alorabi_CV.pdf" download data-i18n="home.download_ar"></a>
+      <a class="btn" href="assets/Ammar_Alorabi_CV.pdf" target="_blank" rel="noopener" data-i18n="home.download_en"></a>
+    </div>
+    <div style="margin-top:14px" class="links">
+      <a class="tag" target="_blank" rel="noopener" href="https://wa.me/201515829936">WhatsApp</a>
+      <a class="tag" href="mailto:orabi.am6@gmail.com">Email</a>
+      <a class="tag" target="_blank" rel="noopener" href="https://www.linkedin.com/">LinkedIn</a>
+      <a class="tag" target="_blank" rel="noopener" href="https://mostaql.com/">Mostaql</a>
+      <a class="tag" target="_blank" rel="noopener" href="https://khamsat.com/">Khamsat</a>
+      <a class="tag" target="_blank" rel="noopener" href="https://baaeed.com/">Baaeed</a>
+      <a class="tag" target="_blank" rel="noopener" href="https://facebook.com/">Facebook</a>
+    </div>
   </div>
+  <div class="avatar-wrap">
+    <img class="avatar" src="assets/profile.jpg" alt="Ammar Alorabi" width="180" height="180" loading="eager" decoding="async">
+  </div>
+</section>
+
+<section class="card">
+  <h2 class="section-title" data-i18n="home.about_title"></h2>
+  <p data-i18n="home.about_text"></p>
+</section>
+
+  </main>
+  <footer class="container">© 2025 Ammar Alorabi</footer>
+  <script>
+    // Mark active link
+    (function(){
+      const href = "index.html";
+      document.querySelectorAll('.nav-item').forEach(a => {
+        if (a.getAttribute('href') === href) a.classList.add('active');
+      });
+    })();
+  </script>
 </body>
 </html>
