@@ -20,15 +20,15 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
-  subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
-  ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
-  displayGreeting: true // Set false to hide this section, defaults to true
+  title: "Ammar Alorabi",
+  logo_name: "AmmarAlorabi",
+  nickname: "Digital Marketer",
+  subTitle:
+    "متخصص في التسويق الرقمي وإدارة المتاجر الإلكترونية. عندي خبرة في الحملات الإعلانية، تحسين محركات البحث، وخدمة العملاء.",
+  resumeLink: "https://drive.google.com/your-cv-link",
+  portfolio_repository: "https://github.com/orabi6/Ammar_alorabi",
 };
+
 
 // Social Media Links
 
