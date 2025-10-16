@@ -51,10 +51,12 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
     <h1 class="name" id="nameTitle">Ammar Alorabi <span class="sep">|</span> Digital Marketer & E-Commerce Manager</h1>
 
+    <p class="subtitle" id="subtitleText">Specialist in digital marketing, e-commerce management, and (SEO) — developing effective marketing strategies that achieve real growth and consistent sales.</p>
+
     <a class="btn-cv" href="assets/Ammar_Alorabi_CV.pdf" download>Download CV</a>
 
     <div class="about">
-      <p id="aboutText"></p>
+      <p id="aboutText">I have been working in digital marketing and e-commerce management since 2019, with experience in advertising campaign management, (SEO) optimization, and performance analysis. Certified in SEO improvement and e-store creation across several platforms, focusing on building effective marketing strategies that achieve real growth and sustainable sales for brands.</p>
     </div>
 
     <div class="contact" aria-label="contact">
@@ -71,7 +73,6 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
 <script>
 (function(){
-  // استرجاع اللغة المحفوظة أو EN افتراضي
   let currentLang = localStorage.getItem('lang') || 'en';
   const htmlTag = document.getElementById('htmlTag');
   htmlTag.lang = currentLang;
@@ -82,15 +83,17 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
   const translations = {
     en: {
       name: "Ammar Alorabi <span class='sep'>|</span> Digital Marketer & E-Commerce Manager",
+      subtitle: "Specialist in digital marketing, e-commerce management, and (SEO) — developing effective marketing strategies that achieve real growth and consistent sales.",
+      about: "I have been working in digital marketing and e-commerce management since 2019, with experience in advertising campaign management, (SEO) optimization, and performance analysis. Certified in SEO improvement and e-store creation across several platforms, focusing on building effective marketing strategies that achieve real growth and sustainable sales for brands.",
       contact: "📞 Contact Numbers:",
-      email: "✉️ Email:",
-      about: "Experienced digital marketer and e-commerce manager focused on driving growth and consistent sales."
+      email: "✉️ Email:"
     },
     ar: {
       name: "عمار العرابي <span class='sep'>|</span> مسوّق رقمي ومدير متاجر إلكترونية",
+      subtitle: "متخصص في التسويق الرقمي، إدارة المتاجر الإلكترونية، أعمل على تطوير، (SEO) وتحسين محركات البحث استراتيجيات تسويق فعالة تحقق نموًا حقيقيًا ومبيعات مستمرة.",
+      about: "أعمل في مجال التسويق الرقمي وإدارة المتاجر الإلكترونية منذ عام 2019، بخبرة تشمل تحسين إدارة الحملات الإعلانية، (SEO) محركات البحث وتحليل الأداء. حاصل على شهادات في تحسين السيو وإنشاء المتاجر الإلكترونية على عدة منصات، وأركز على بناء استراتيجيات تسويق فعالة تحقق نموًا حقيقيًا ومبيعات مستمرة للعلامات التجارية.",
       contact: "📞 أرقام التواصل:",
-      email: "✉️ البريد الإلكتروني:",
-      about: "متخصص في التسويق الرقمي وإدارة المتاجر الإلكترونية، بخبرة منذ 2019 في بناء استراتيجيات تسويق فعالة وتحقيق نمو حقيقي في المبيعات."
+      email: "✉️ البريد الإلكتروني:"
     }
   };
 
@@ -98,16 +101,15 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     htmlTag.lang = lang;
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.getElementById('nameTitle').innerHTML = translations[lang].name;
+    document.getElementById('subtitleText').innerHTML = translations[lang].subtitle;
+    document.getElementById('aboutText').innerHTML = translations[lang].about;
     document.getElementById('contactLabel').innerHTML = translations[lang].contact;
     document.getElementById('emailLabel').innerHTML = translations[lang].email;
-    document.getElementById('aboutText').innerHTML = translations[lang].about;
     langToggle.textContent = lang === 'en' ? 'AR | EN' : 'EN | AR';
   }
 
-  // تطبيق اللغة عند التحميل
   window.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 
-  // عند التبديل
   langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     localStorage.setItem('lang', currentLang);
