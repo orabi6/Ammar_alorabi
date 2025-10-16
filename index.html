@@ -19,6 +19,7 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 .btn-cv{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#04140a;font-weight:700;text-decoration:none}
 .contact{margin-top:14px;text-align:center;line-height:1.8;font-weight:700}
 .contact a{color:var(--text);text-decoration:none}
+.contact .number{direction:ltr;display:inline-block;} /* يخلي الأرقام مرتبة */
 .lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
 .nav{display:flex;gap:18px;justify-content:center;padding:12px 0;flex-wrap:wrap}
 .nav-item{color:var(--link);text-decoration:none;font-weight:600;white-space:nowrap}
@@ -61,8 +62,8 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
     <div class="contact" aria-label="contact">
       <p id="contactLabel">📞 Contact Numbers:</p>
-      <p><a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a></p>
-      <p><a href="https://wa.me/201515829936" target="_blank">+20 151 582 9936</a></p>
+      <p><a href="https://wa.me/201503886599" class="number" target="_blank">+20 150 388 6599</a></p>
+      <p><a href="https://wa.me/201515829936" class="number" target="_blank">+20 151 582 9936</a></p>
       <p id="emailLabel">✉️ Email:</p>
       <p><a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com</a></p>
     </div>
@@ -90,6 +91,7 @@ const translations = {
 
 function applyLang(lang) {
   document.documentElement.lang = lang;
+  document.body.dir = lang === 'ar' ? 'rtl' : 'ltr'; // يضبط اتجاه الصفحة
   document.getElementById('nameTitle').innerHTML = translations[lang].name;
   document.getElementById('contactLabel').innerHTML = translations[lang].contact;
   document.getElementById('emailLabel').innerHTML = translations[lang].email;
