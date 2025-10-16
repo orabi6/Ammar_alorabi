@@ -60,10 +60,10 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     </div>
 
     <div class="contact" aria-label="contact">
-      <p>📞 Contact Numbers:</p>
+      <p id="contactLabel">📞 Contact Numbers:</p>
       <p><a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a></p>
       <p><a href="https://wa.me/201515829936" target="_blank">+20 151 582 9936</a></p>
-      <p>✉️ Email:</p>
+      <p id="emailLabel">✉️ Email:</p>
       <p><a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com</a></p>
     </div>
   </div>
@@ -73,31 +73,37 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
 <script>
 const langToggle = document.getElementById('langToggle');
-let currentLang = 'en';
+let currentLang = localStorage.getItem('lang') || 'en'; // حفظ آخر لغة
 
 const translations = {
   en: {
     name: "Ammar Alorabi <span class='sep'>|</span> Digital Marketer & E-Commerce Manager",
-    contactTitle: "📞 Contact Numbers:",
-    emailTitle: "✉️ Email:"
+    contact: "📞 Contact Numbers:",
+    email: "✉️ Email:"
   },
   ar: {
     name: "عمار العرابي <span class='sep'>|</span> مسوّق رقمي ومدير متاجر إلكترونية",
-    contactTitle: "📞 أرقام التواصل:",
-    emailTitle: "✉️ البريد الإلكتروني:"
+    contact: "📞 أرقام التواصل:",
+    email: "✉️ البريد الإلكتروني:"
   }
 };
 
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  document.getElementById('nameTitle').innerHTML = translations[lang].name;
+  document.getElementById('contactLabel').innerHTML = translations[lang].contact;
+  document.getElementById('emailLabel').innerHTML = translations[lang].email;
+  langToggle.textContent = lang === 'en' ? 'AR | EN' : 'EN | AR';
+}
+
+// تطبيق اللغة عند تحميل الصفحة
+applyLang(currentLang);
+
+// عند الضغط على زر التحويل
 langToggle.addEventListener('click', () => {
   currentLang = currentLang === 'en' ? 'ar' : 'en';
-  document.documentElement.lang = currentLang;
-
-  const t = translations[currentLang];
-  document.getElementById('nameTitle').innerHTML = t.name;
-  document.querySelector('.contact p:nth-child(1)').innerHTML = t.contactTitle;
-  document.querySelector('.contact p:nth-child(5)').innerHTML = t.emailTitle;
-
-  langToggle.textContent = currentLang === 'en' ? 'AR | EN' : 'EN | AR';
+  localStorage.setItem('lang', currentLang); // حفظ اللغة
+  applyLang(currentLang);
 });
 </script>
 </body>
