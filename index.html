@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html id="htmlTag">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-i18n="titles.home">Ammar Alorabi</title>
+<title>Ammar Alorabi</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
@@ -31,18 +31,17 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
   h1.name{font-size:20px}
 }
 </style>
-<script defer src="assets/i18n/i18n.js"></script>
 </head>
 <body>
 <div class="lang-toggle" id="langToggle">AR | EN</div>
 
 <header>
   <nav class="nav">
-    <a href="index.html" class="nav-item" data-i18n="nav.home"></a>
-    <a href="experience.html" class="nav-item" data-i18n="nav.experience"></a>
-    <a href="education.html" class="nav-item" data-i18n="nav.education"></a>
-    <a href="certificates.html" class="nav-item" data-i18n="nav.certificates"></a>
-    <a href="services.html" class="nav-item" data-i18n="nav.services"></a>
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="experience.html" class="nav-item">Experience</a>
+    <a href="education.html" class="nav-item">Education</a>
+    <a href="certificates.html" class="nav-item">Certificates</a>
+    <a href="services.html" class="nav-item">Services</a>
   </nav>
 </header>
 
@@ -52,12 +51,10 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
     <h1 class="name" id="nameTitle">Ammar Alorabi <span class="sep">|</span> Digital Marketer & E-Commerce Manager</h1>
 
-    <p class="subtitle" data-i18n="home.subtitle"></p>
-
-    <a class="btn-cv" href="assets/Ammar_Alorabi_CV.pdf" download data-i18n="home.download">Download CV</a>
+    <a class="btn-cv" href="assets/Ammar_Alorabi_CV.pdf" download>Download CV</a>
 
     <div class="about">
-      <p data-i18n="home.about"></p>
+      <p id="aboutText"></p>
     </div>
 
     <div class="contact" aria-label="contact">
@@ -73,42 +70,50 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 <footer class="footer">© 2025 Ammar Alorabi</footer>
 
 <script>
-window.addEventListener('load', () => {
+(function(){
+  // استرجاع اللغة المحفوظة أو EN افتراضي
+  let currentLang = localStorage.getItem('lang') || 'en';
+  const htmlTag = document.getElementById('htmlTag');
+  htmlTag.lang = currentLang;
+  document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
   const langToggle = document.getElementById('langToggle');
-  let currentLang = localStorage.getItem('lang') || 'en'; // حفظ آخر لغة
 
   const translations = {
     en: {
       name: "Ammar Alorabi <span class='sep'>|</span> Digital Marketer & E-Commerce Manager",
       contact: "📞 Contact Numbers:",
-      email: "✉️ Email:"
+      email: "✉️ Email:",
+      about: "Experienced digital marketer and e-commerce manager focused on driving growth and consistent sales."
     },
     ar: {
       name: "عمار العرابي <span class='sep'>|</span> مسوّق رقمي ومدير متاجر إلكترونية",
       contact: "📞 أرقام التواصل:",
-      email: "✉️ البريد الإلكتروني:"
+      email: "✉️ البريد الإلكتروني:",
+      about: "متخصص في التسويق الرقمي وإدارة المتاجر الإلكترونية، بخبرة منذ 2019 في بناء استراتيجيات تسويق فعالة وتحقيق نمو حقيقي في المبيعات."
     }
   };
 
   function applyLang(lang) {
-    document.documentElement.lang = lang;
+    htmlTag.lang = lang;
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.getElementById('nameTitle').innerHTML = translations[lang].name;
     document.getElementById('contactLabel').innerHTML = translations[lang].contact;
     document.getElementById('emailLabel').innerHTML = translations[lang].email;
+    document.getElementById('aboutText').innerHTML = translations[lang].about;
     langToggle.textContent = lang === 'en' ? 'AR | EN' : 'EN | AR';
   }
 
-  // تطبيق اللغة عند تحميل الصفحة
-  applyLang(currentLang);
+  // تطبيق اللغة عند التحميل
+  window.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
 
-  // عند الضغط على زر التحويل
+  // عند التبديل
   langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     localStorage.setItem('lang', currentLang);
     applyLang(currentLang);
   });
-});
+})();
 </script>
 </body>
 </html>
