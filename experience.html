@@ -50,9 +50,19 @@ p {
   line-height:1.7;
 }
 .footer {
-  text-align:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:20px;
+  background:rgba(255,255,255,0.03);
+  border-top:1px solid rgba(255,255,255,0.08);
   color:var(--muted);
-  padding:20px 0;
+  font-weight:600;
+}
+.footer a {
+  color:var(--text);
+  text-decoration:none;
 }
 .lang-toggle {
   position:fixed;
@@ -95,7 +105,15 @@ p {
   </div>
 </main>
 
-<footer class="footer">© 2025 Ammar Alorabi</footer>
+<footer class="footer">
+  <div class="right">
+    📞 <a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a>  
+    | <a href="https://wa.me/20151829936" target="_blank">+20 151 829 936</a>
+  </div>
+  <div class="left">
+    ✉️ <a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com</a>
+  </div>
+</footer>
 
 <script>
 const t = {
