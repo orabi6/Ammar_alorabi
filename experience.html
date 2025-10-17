@@ -1,109 +1,104 @@
-diff --git a/experience.html b/experience.html
-index eaa2abd2cf72b9d64f7a6465c1b1a0837231c567..19993d5ebf265c8a17ea980816a31f57e9bb98b6 100644
---- a/experience.html
-+++ b/experience.html
-@@ -1,82 +1,92 @@
- <!doctype html>
- <html lang="en">
- <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width,initial-scale=1">
- <title>Experience | Ammar Alorabi</title>
- <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
- <style>
- :root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
- *{box-sizing:border-box}
- body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
- .container{max-width:1100px;margin:0 auto;padding:20px}
- .header-center{text-align:center;padding-top:18px}
- h1{margin-bottom:10px;font-size:26px}
- .job{background:var(--panel);border-radius:12px;padding:16px;margin-top:14px;border:1px solid rgba(255,255,255,0.05)}
- h2{color:var(--accent);font-size:20px;margin-bottom:6px}
- p{color:var(--muted);line-height:1.7}
- .lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
- 
--/* شريط التنقل — مطابق للرئيسية ويظهر كله على الجوال */
-+/* شريط التنقل — مرن مع تمرير أفقي عند الحاجة */
- .nav{
--  display:flex;
-+  margin:0;
-+  padding:12px 16px;
-+  overflow-x:auto;
-+  white-space:nowrap;
-+}
-+.nav-inner{
-+  display:inline-flex;
-+  gap:18px;
-+  min-width:100%;
-   justify-content:center;
--  gap:18px 12px;         /* فراغ أفقي وعمودي */
--  padding:12px 0;
--  flex-wrap:wrap;        /* يلف بدل ما يختفي آخر خيار */
- }
- .nav a{
-+  display:inline-flex;
-+  align-items:center;
-   color:var(--link);
-   text-decoration:none;
-   font-weight:600;
--  white-space:nowrap;    /* يمنع كسر اسم الرابط نفسه */
--  flex:0 0 auto;         /* يثبت عرض الرابط داخل اللف */
-+  padding:4px 8px;
-+  flex:0 0 auto;
- }
-+.nav::-webkit-scrollbar{display:none}
- 
- .footer{
-   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
-   padding:20px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);
-   color:var(--muted);font-weight:600
- }
- .footer a{color:var(--text);text-decoration:none}
- @media(max-width:760px){
-   .footer{flex-direction:column;gap:10px;text-align:center}
- }
- </style>
- </head>
- <body>
- 
- <div class="lang-toggle" id="langToggle">AR | EN</div>
- 
- <header>
-   <nav class="nav">
--    <a href="index.html">Home</a>
--    <a href="experience.html">Experience</a>
--    <a href="education.html">Education</a>
--    <a href="certificates.html">Certificates</a>
--    <a href="services.html">Services</a>
-+    <div class="nav-inner">
-+      <a href="index.html">Home</a>
-+      <a href="experience.html">Experience</a>
-+      <a href="education.html">Education</a>
-+      <a href="certificates.html">Certificates</a>
-+      <a href="services.html">Services</a>
-+    </div>
-   </nav>
- </header>
- 
- <main class="container">
-   <div class="header-center">
-     <h1 id="titleTxt">Professional Experience</h1>
-   </div>
- 
-   <div class="job">
-     <h2 id="c1">Oud Center – E-commerce Store Manager</h2>
-     <p id="r1">Managed online store operations, product listings, inventory, and order fulfillment. Developed marketing strategies that increased monthly sales and improved ROI. Handled paid advertising campaigns on Meta (Facebook & Instagram). Optimized product descriptions and SEO to enhance search visibility. Improved customer experience, response time, and conversion rate.</p>
-   </div>
- 
-   <div class="job">
-     <h2 id="c2">Bait Al-Biryani – Operations Manager</h2>
-     <p id="r2">Oversaw daily restaurant operations and logistics coordination. Managed delivery services and digital platforms integration. Improved workflow and reduced operational delays by 30%. Handled customer relations and implemented feedback systems.</p>
-   </div>
- 
-   <div class="job">
-     <h2 id="c3">Freelance Digital Marketer – Egypt</h2>
-     <p id="r3">Launched and managed social media ad campaigns for various clients. Created marketing strategies that led to steady sales growth. Provided SEO and e-commerce consulting to startups and brands. Focused on analytics-based marketing to improve results continuously.</p>
-   </div>
- 
-   <div class="job">
-     <h2 id="c4">Accounting & VAT Management</h2>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experience | Ammar Alorabi</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header-center{text-align:center;padding-top:18px}
+h1{margin-bottom:10px;font-size:26px}
+.job{background:var(--panel);border-radius:12px;padding:16px;margin-top:14px;border:1px solid rgba(255,255,255,0.05)}
+h2{color:var(--accent);font-size:20px;margin-bottom:6px}
+p{color:var(--muted);line-height:1.7}
+.lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
+
+/* شريط التنقل — مطابق للرئيسية ويظهر كله على الجوال */
+/* شريط التنقل — مرن مع تمرير أفقي عند الحاجة */
+.nav{
+  display:flex;
+  margin:0;
+  padding:12px 16px;
+  overflow-x:auto;
+  white-space:nowrap;
+}
+.nav-inner{
+  display:inline-flex;
+  gap:18px;
+  min-width:100%;
+  justify-content:center;
+  gap:18px 12px;         /* فراغ أفقي وعمودي */
+  padding:12px 0;
+  flex-wrap:wrap;        /* يلف بدل ما يختفي آخر خيار */
+}
+.nav a{
+  display:inline-flex;
+  align-items:center;
+  color:var(--link);
+  text-decoration:none;
+  font-weight:600;
+  white-space:nowrap;    /* يمنع كسر اسم الرابط نفسه */
+  flex:0 0 auto;         /* يثبت عرض الرابط داخل اللف */
+  padding:4px 8px;
+  flex:0 0 auto;
+}
+.nav::-webkit-scrollbar{display:none}
+
+.footer{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  padding:20px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);font-weight:600
+}
+.footer a{color:var(--text);text-decoration:none}
+@media(max-width:760px){
+  .footer{flex-direction:column;gap:10px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle" id="langToggle">AR | EN</div>
+
+<header>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="certificates.html">Certificates</a>
+    <a href="services.html">Services</a>
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="education.html">Education</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="services.html">Services</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="header-center">
+    <h1 id="titleTxt">Professional Experience</h1>
+  </div>
+
+  <div class="job">
+    <h2 id="c1">Oud Center – E-commerce Store Manager</h2>
+    <p id="r1">Managed online store operations, product listings, inventory, and order fulfillment. Developed marketing strategies that increased monthly sales and improved ROI. Handled paid advertising campaigns on Meta (Facebook & Instagram). Optimized product descriptions and SEO to enhance search visibility. Improved customer experience, response time, and conversion rate.</p>
+  </div>
+
+  <div class="job">
+    <h2 id="c2">Bait Al-Biryani – Operations Manager</h2>
+    <p id="r2">Oversaw daily restaurant operations and logistics coordination. Managed delivery services and digital platforms integration. Improved workflow and reduced operational delays by 30%. Handled customer relations and implemented feedback systems.</p>
+  </div>
+
+  <div class="job">
+    <h2 id="c3">Freelance Digital Marketer – Egypt</h2>
+    <p id="r3">Launched and managed social media ad campaigns for various clients. Created marketing strategies that led to steady sales growth. Provided SEO and e-commerce consulting to startups and brands. Focused on analytics-based marketing to improve results continuously.</p>
+  </div>
+
+  <div class="job">
+    <h2 id="c4">Accounting & VAT Management</h2>
