@@ -6,70 +6,37 @@
 <title>Experience | Ammar Alorabi</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#0b0f14;
-  --panel:#0f1520;
-  --text:#e5e7eb;
-  --muted:#9aa4b2;
-  --accent:#22c55e;
-  --link:#93c5fd;
-}
-* {box-sizing:border-box;}
-body {
-  margin:0;
-  font-family:'Tajawal',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-.container {max-width:1100px;margin:0 auto;padding:20px}
+:root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
+.container{max-width:1100px;margin:0 auto;padding:20px}
 .header-center{text-align:center;padding-top:18px}
 h1{margin-bottom:10px;font-size:26px}
 .job{background:var(--panel);border-radius:12px;padding:16px;margin-top:14px;border:1px solid rgba(255,255,255,0.05)}
 h2{color:var(--accent);font-size:20px;margin-bottom:6px}
 p{color:var(--muted);line-height:1.7}
-.lang-toggle {
-  position:fixed;
-  top:12px;
-  right:12px;
-  padding:6px 10px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.04);
-  cursor:pointer;
-  font-weight:700;
-}
+.lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
 
-/* ✅ الشريط العلوي المعدّل فعليًا */
-.nav {
+/* شريط التنقل – مطابق للرئيسية ويَلفّ على سطرين عند الحاجة */
+.nav{
   display:flex;
   gap:18px;
   justify-content:center;
   padding:12px 0;
-  flex-wrap:nowrap;
-  overflow-x:auto;
-  white-space:nowrap;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
+  flex-wrap:wrap;            /* يَلفّ بدل ما يختفي آخر خيار */
+  overflow:visible;          /* تأكد من عدم قص أي عنصر */
 }
-.nav::-webkit-scrollbar {display:none;}
-.nav a {
+.nav a{
   color:var(--link);
   text-decoration:none;
   font-weight:600;
+  white-space:nowrap;        /* يمنع كسر اسم الرابط نفسه */
 }
 
-.footer {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  padding:20px;
-  background:rgba(255,255,255,0.03);
-  border-top:1px solid rgba(255,255,255,0.08);
-  color:var(--muted);
-  font-weight:600;
-}
-.footer a {color:var(--text);text-decoration:none;}
+.footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:20px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-weight:600}
+.footer a{color:var(--text);text-decoration:none}
 @media(max-width:760px){
+  .nav{flex-wrap:wrap!important} /* تأكيد اللف على الجوال */
   .footer{flex-direction:column;gap:10px;text-align:center}
 }
 </style>
@@ -142,11 +109,11 @@ const t={
     toggle:"EN | AR",
     title:"الخبرات العملية",
     c1:"عود سنتر – مدير متجر إلكتروني",
-    r1:"إدارة عمليات المتجر الإلكتروني من إدراج المنتجات وإدارة المخزون وتنفيذ الطلبات. تطوير استراتيجيات تسويق زادت من المبيعات الشهرية وحسّنت العائد على الاستثمار. إدارة الحملات الإعلانية المدفوعة على ميتا (فيسبوك وإنستغرام). تحسين أوصاف المنتجات وتهيئتها لمحركات البحث (SEO). تحسين تجربة العملاء وسرعة الاستجابة ومعدل التحويل.",
+    r1:"إطلاق وإدارة الحملات الإعلانية عبر وسائل التواصل الاجتماعي لعملاء متنوعين. تطوير استراتيجيات تسويق حققت نموًا مستمرًا في المبيعات. تقديم استشارات في السيو (SEO) والتجارة الإلكترونية للشركات الناشئة والعلامات التجارية. التركيز على التسويق القائم على التحليل لتحقيق نتائج أفضل باستمرار.",
     c2:"بيت البرياني – مدير عمليات",
     r2:"الإشراف على العمليات اليومية للمطعم والتنسيق اللوجستي. إدارة خدمات التوصيل وربط المنصات الرقمية بنظام الطلبات. تحسين سير العمل وتقليل التأخيرات التشغيلية بنسبة 30٪. إدارة علاقات العملاء وتنفيذ نظام ملاحظات لتحسين الخدمة.",
     c3:"مسوّق رقمي مستقل – مصر",
-    r3:"إطلاق وإدارة الحملات الإعلانية عبر وسائل التواصل الاجتماعي لعملاء متنوعين. تطوير استراتيجيات تسويق حققت نموًا مستمرًا في المبيعات. تقديم استشارات في السيو (SEO) والتجارة الإلكترونية للشركات الناشئة والعلامات التجارية. التركيز على التسويق القائم على التحليل لتحقيق نتائج أفضل باستمرار.",
+    r3:"إطلاق وإدارة الحملات الإعلانية عبر وسائل التواصل الاجتماعي لعملاء متنوعين. تطوير استراتيجيات تسويق حققت نموًا مستمرًا في المبيعات. تقديم استشارات في السيو والتجارة الإلكترونية للشركات الناشئة والعلامات التجارية. التركيز على التسويق القائم على التحليل لتحقيق نتائج أفضل باستمرار.",
     c4:"إدارة الحسابات وضريبة القيمة المضافة",
     r4:"خبرة في إدارة الحسابات وإعداد التقارير والتعامل مع ضريبة القيمة المضافة بدقة وامتثال."
   }
