@@ -1,69 +1,40 @@
 <!DOCTYPE html>
 <html id="htmlTag" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience | Ammar Alorabi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0b0f14;
       --panel: #0f1520;
-      --text: #5e7ebc;
+      --text: #93c5fd;
       --muted: #9aa4b2;
       --accent: #22c55e;
-      --link: #93c5fd;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Tajawal', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
+    .nav{
+      display:flex;justify-content:center;gap:18px;
+      padding:18px 12px;background:var(--panel);
+      box-shadow:0 2px 6px rgba(0,0,0,0.4);position:sticky;top:0;z-index:999;
     }
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      padding: 18px 12px;
-      flex-wrap: wrap;
-      background: var(--panel);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    .nav a{text-decoration:none;color:var(--text);font-weight:600;}
+    .nav a:hover{color:var(--accent);}
+    .lang-toggle{
+      position:fixed;top:14px;right:14px;
+      padding:6px 10px;border-radius:999px;
+      background:rgba(255,255,255,0.05);
+      color:var(--text);font-weight:700;cursor:pointer;z-index:1000;
     }
-    .nav a {
-      color: var(--link);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .nav a:hover { color: var(--accent); }
-    .lang-toggle {
-      position: fixed;
-      top: 12px;
-      right: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      font-weight: 700;
-      cursor: pointer;
-      z-index: 1000;
-    }
-    .job {
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.1);
-      margin: 18px auto;
-      padding: 18px;
-      border-radius: 12px;
-      max-width: 720px;
-    }
-    h1 { text-align: center; margin-top: 30px; }
+    .job{background:var(--panel);border:1px solid rgba(255,255,255,0.1);
+      margin:18px auto;padding:18px;border-radius:12px;max-width:720px;}
+    h1{text-align:center;margin-top:30px;}
   </style>
 </head>
 <body>
-  <div class="lang-toggle" id="langToggle">AR | EN</div>
+  <div id="langToggle" class="lang-toggle">AR | EN</div>
 
   <nav class="nav">
     <a href="index.html">Home</a>
@@ -78,63 +49,74 @@
   <div class="job">
     <h2 id="c1">Oud Center - E-commerce Store Manager</h2>
     <p id="r1">
-      Managed online store operations, product listings, inventory, and order fulfillment. Developed marketing strategies that increased monthly sales and improved ROI. Handled paid advertising campaigns on Meta (Facebook & Instagram). Optimized product descriptions and SEO to enhance search visibility. Improved customer experience, response time, and conversion rate.
+      Managed online store operations, product listings, inventory, and order fulfillment.
+      Developed marketing strategies that increased monthly sales and improved ROI.
+      Handled paid advertising campaigns on Meta (Facebook & Instagram).
+      Optimized product descriptions and SEO to enhance search visibility.
+      Improved customer experience, response time, and conversion rate.
+      Managed account administration and VAT submissions.
     </p>
   </div>
 
   <div class="job">
     <h2 id="c2">Bait Al-Biryani - Operations Manager</h2>
     <p id="r2">
-      Oversaw daily restaurant operations and logistics coordination. Managed delivery services and digital platforms integration. Improved workflow and reduced operational delays by 30%. Handled customer relations and implemented feedback systems.
+      Oversaw daily restaurant operations and logistics coordination.
+      Managed delivery services and digital platforms integration.
+      Improved workflow and reduced operational delays by 30%.
+      Handled customer relations and implemented feedback systems.
     </p>
   </div>
 
   <div class="job">
     <h2 id="c3">Freelance Digital Marketer - Egypt</h2>
     <p id="r3">
-      Launched and managed social media ad campaigns for various clients. Created marketing strategies that led to steady sales growth.
+      Launched and managed social media ad campaigns for various clients.
+      Created marketing strategies that led to steady sales growth.
     </p>
   </div>
 
   <script>
-    const langToggle = document.getElementById('langToggle');
-    let currentLang = localStorage.getItem('lang') || 'en';
-    const t = {
-      en: {
-        toggle: 'AR | EN',
-        title: 'Professional Experience',
-        c1: 'Oud Center - E-commerce Store Manager',
-        r1: 'Managed online store operations, product listings, inventory, and order fulfillment...',
-        c2: 'Bait Al-Biryani - Operations Manager',
-        r2: 'Oversaw daily restaurant operations and logistics coordination...',
-        c3: 'Freelance Digital Marketer - Egypt',
-        r3: 'Launched and managed social media ad campaigns for various clients...'
+    const langToggle=document.getElementById('langToggle');
+    let currentLang=localStorage.getItem('lang')||'en';
+    const t={
+      en:{
+        toggle:'AR | EN',
+        title:'Professional Experience',
+        c1:'Oud Center - E-commerce Store Manager',
+        r1:'Managed online store operations, product listings, inventory, and order fulfillment. Developed marketing strategies that increased monthly sales and improved ROI. Handled paid advertising campaigns on Meta (Facebook & Instagram). Optimized product descriptions and SEO to enhance search visibility. Improved customer experience, response time, and conversion rate. Managed account administration and VAT submissions.',
+        c2:'Bait Al-Biryani - Operations Manager',
+        r2:'Oversaw daily restaurant operations and logistics coordination. Managed delivery services and digital platforms integration. Improved workflow and reduced operational delays by 30%. Handled customer relations and implemented feedback systems.',
+        c3:'Freelance Digital Marketer - Egypt',
+        r3:'Launched and managed social media ad campaigns for various clients. Created marketing strategies that led to steady sales growth.'
       },
-      ar: {
-        toggle: 'EN | AR',
-        title: 'الخبرات المهنية',
-        c1: 'عود سنتر - مدير متجر إلكتروني',
-        r1: 'إدارة عمليات المتجر الإلكتروني، وإدراج المنتجات وتنفيذ الطلبات، وتطوير استراتيجيات تسويق حققت نموًا في المبيعات وتحسين الاستثمار...',
-        c2: 'بيت البرياني - مدير عمليات',
-        r2: 'الإشراف على العمليات اليومية للمطعم والتنسيق اللوجستي، إدارة خدمات التوصيل وربط المنصات الرقمية...',
-        c3: 'مسوق رقمي مستقل - مصر',
-        r3: 'إطلاق وإدارة حملات الإعلانات عبر وسائل التواصل الاجتماعي، تطوير استراتيجيات تسويق لعملاء متنوعين...'
+      ar:{
+        toggle:'EN | AR',
+        title:'الخبرات المهنية',
+        c1:'عود سنتر - مدير متجر إلكتروني',
+        r1:'إدارة عمليات المتجر الإلكتروني، إدراج المنتجات وتنفيذ الطلبات، تطوير استراتيجيات تسويق زادت من المبيعات الشهرية وتحسين العائد على الاستثمار. إدارة الحملات الإعلانية المدفوعة على ميتا (فيسبوك وإنستغرام). تحسين أوصاف المنتجات وتهيئتها لمحركات البحث (SEO). تحسين تجربة العملاء وسرعة الاستجابة ومعدل التحويل. إدارة الحسابات وحسابات ضريبة القيمة المضافة.',
+        c2:'بيت البرياني - مدير عمليات',
+        r2:'الإشراف على العمليات اليومية للمطعم والتنسيق اللوجستي، إدارة خدمات التوصيل وربط المنصات الرقمية. تحسين سير العمل وتقليل التأخيرات التشغيلية بنسبة 30٪. إدارة علاقات العملاء وتنفيذ ملاحظات لتحسين الخدمة.',
+        c3:'مسوق رقمي مستقل - مصر',
+        r3:'إطلاق وإدارة حملات الإعلانات عبر وسائل التواصل الاجتماعي، تطوير استراتيجيات تسويق فعالة لعملاء متنوعين أدت إلى نمو مستمر في المبيعات.'
       }
     };
-    function applyLang(lang) {
-      document.getElementById('titleTxt').textContent = t[lang].title;
-      document.getElementById('c1').textContent = t[lang].c1;
-      document.getElementById('r1').textContent = t[lang].r1;
-      document.getElementById('c2').textContent = t[lang].c2;
-      document.getElementById('r2').textContent = t[lang].r2;
-      document.getElementById('c3').textContent = t[lang].c3;
-      document.getElementById('r3').textContent = t[lang].r3;
-      langToggle.textContent = t[lang].toggle;
-      document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    function applyLang(lang){
+      document.getElementById('titleTxt').textContent=t[lang].title;
+      document.getElementById('c1').textContent=t[lang].c1;
+      document.getElementById('r1').textContent=t[lang].r1;
+      document.getElementById('c2').textContent=t[lang].c2;
+      document.getElementById('r2').textContent=t[lang].r2;
+      document.getElementById('c3').textContent=t[lang].c3;
+      document.getElementById('r3').textContent=t[lang].r3;
+      langToggle.textContent=t[lang].toggle;
+      document.body.dir=lang==='ar'?'rtl':'ltr';
+      langToggle.style.right=lang==='ar'?'auto':'14px';
+      langToggle.style.left=lang==='ar'?'14px':'auto';
     }
-    langToggle.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      localStorage.setItem('lang', currentLang);
+    langToggle.addEventListener('click',()=>{
+      currentLang=currentLang==='en'?'ar':'en';
+      localStorage.setItem('lang',currentLang);
       applyLang(currentLang);
     });
     applyLang(currentLang);
