@@ -17,38 +17,29 @@ h2{color:var(--accent);font-size:20px;margin-bottom:6px}
 p{color:var(--muted);line-height:1.7}
 .lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
 
-/* ✅ شريط التنقل مصحح فعليًا */
+/* شريط التنقل — مطابق للرئيسية ويظهر كله على الجوال */
 .nav{
   display:flex;
-  gap:18px;
   justify-content:center;
+  gap:18px 12px;         /* فراغ أفقي وعمودي */
   padding:12px 0;
-  flex-wrap:wrap;
-  row-gap:8px;                 /* يضيف مسافة عمودية عند اللف */
-  overflow:visible;
+  flex-wrap:wrap;        /* يلف بدل ما يختفي آخر خيار */
 }
 .nav a{
   color:var(--link);
   text-decoration:none;
   font-weight:600;
-  white-space:nowrap;
+  white-space:nowrap;    /* يمنع كسر اسم الرابط نفسه */
+  flex:0 0 auto;         /* يثبت عرض الرابط داخل اللف */
 }
 
 .footer{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  padding:20px;
-  background:rgba(255,255,255,0.03);
-  border-top:1px solid rgba(255,255,255,0.08);
-  color:var(--muted);
-  font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;
+  padding:20px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);font-weight:600
 }
 .footer a{color:var(--text);text-decoration:none}
-
 @media(max-width:760px){
-  .nav{flex-wrap:wrap!important;justify-content:center}
   .footer{flex-direction:column;gap:10px;text-align:center}
 }
 </style>
