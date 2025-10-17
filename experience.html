@@ -6,34 +6,69 @@
 <title>Experience | Ammar Alorabi</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
-*{box-sizing:border-box}
-body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
-.container{max-width:1100px;margin:0 auto;padding:20px}
+:root {
+  --bg:#0b0f14;
+  --panel:#0f1520;
+  --text:#e5e7eb;
+  --muted:#9aa4b2;
+  --accent:#22c55e;
+  --link:#93c5fd;
+}
+* {box-sizing:border-box;}
+body {
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.container {max-width:1100px;margin:0 auto;padding:20px}
 .header-center{text-align:center;padding-top:18px}
 h1{margin-bottom:10px;font-size:26px}
 .job{background:var(--panel);border-radius:12px;padding:16px;margin-top:14px;border:1px solid rgba(255,255,255,0.05)}
 h2{color:var(--accent);font-size:20px;margin-bottom:6px}
 p{color:var(--muted);line-height:1.7}
-.lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
+.lang-toggle {
+  position:fixed;
+  top:12px;
+  right:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.04);
+  cursor:pointer;
+  font-weight:700;
+}
 
-/* شريط التنقل — تمرير أفقي على الجوال حتى لا يختفي آخر خيار */
-.nav{
+/* ✅ الشريط العلوي المعدّل فعليًا */
+.nav {
   display:flex;
   gap:18px;
   justify-content:center;
   padding:12px 0;
-  flex-wrap:nowrap;            /* مهم: لا يلف */
-  overflow-x:auto;             /* يسمح بالتمرير */
-  white-space:nowrap;          /* يمنع كسر الروابط لسطرين */
-  scrollbar-width:none;        /* يخفي شريط التمرير في فايرفوكس */
-  -webkit-overflow-scrolling:touch; /* سلاسة في iOS */
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  white-space:nowrap;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
 }
-.nav::-webkit-scrollbar{display:none} /* يخفي شريط التمرير في كروم/سفاري */
-.nav a{color:var(--link);text-decoration:none;font-weight:600}
+.nav::-webkit-scrollbar {display:none;}
+.nav a {
+  color:var(--link);
+  text-decoration:none;
+  font-weight:600;
+}
 
-.footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:20px;background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-weight:600}
-.footer a{color:var(--text);text-decoration:none}
+.footer {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  padding:20px;
+  background:rgba(255,255,255,0.03);
+  border-top:1px solid rgba(255,255,255,0.08);
+  color:var(--muted);
+  font-weight:600;
+}
+.footer a {color:var(--text);text-decoration:none;}
 @media(max-width:760px){
   .footer{flex-direction:column;gap:10px;text-align:center}
 }
@@ -81,7 +116,7 @@ p{color:var(--muted);line-height:1.7}
 
 <footer class="footer">
   <div class="right">
-    📞 <a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a> | 
+    📞 <a href="https://wa.me/201503886599" target="_blank">+20 150 388 6599</a> |
     <a href="https://wa.me/201515829936" target="_blank">+20 151 829 936</a>
   </div>
   <div class="left">
