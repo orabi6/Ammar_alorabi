@@ -1,2 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Disallow:
+
+Sitemap: https://orabi6.github.io/Ammar_alorabi/sitemap.xml
