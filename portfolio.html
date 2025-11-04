@@ -1,0 +1,143 @@
+<!doctype html>
+<html id="htmlTag">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ammar Alorabi | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f14;--panel:#0f1520;--text:#e5e7eb;--muted:#9aa4b2;--accent:#22c55e;--link:#93c5fd}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--text);}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
+.nav{display:flex;gap:18px;justify-content:center;padding:12px 0;flex-wrap:wrap;overflow-x:auto;scroll-behavior:smooth}
+.nav::-webkit-scrollbar{display:none}
+.nav-item{color:var(--link);text-decoration:none;font-weight:600;white-space:nowrap;transition:.3s}
+.nav-item:hover{color:var(--accent)}
+.section{background:var(--panel);border-radius:12px;padding:20px;margin-top:20px;border:1px solid rgba(255,255,255,0.05)}
+.section h2{color:var(--accent);margin-bottom:10px}
+.project{margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:12px}
+.project:last-child{border-bottom:none}
+.project h3{margin:0;color:var(--link)}
+.project p{color:var(--muted);margin:6px 0 0}
+.footer{text-align:center;padding:20px 0;color:var(--muted)}
+@media(max-width:800px){
+  .nav{padding-top:48px}
+  .nav-item{font-size:14px;padding:6px 8px}
+}
+</style>
+</head>
+<body>
+<div class="lang-toggle" id="langToggle">AR | EN</div>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="nav-item">Home</a>
+    <a href="experience.html" class="nav-item">Experience</a>
+    <a href="education.html" class="nav-item">Education</a>
+    <a href="certificates.html" class="nav-item">Certificates</a>
+    <a href="services.html" class="nav-item">Services</a>
+    <a href="portfolio.html" class="nav-item" style="color:var(--accent)">Portfolio</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h1 id="pageTitle">Portfolio</h1>
+  
+  <section class="section" id="featured">
+    <h2>Featured Projects</h2>
+    <div class="project">
+      <h3>English Learning Community Marketing Plan</h3>
+      <p>Full marketing plan combining SEO, paid ads, and engagement campaigns to attract real subscribers.</p>
+    </div>
+    <div class="project">
+      <h3>Planera TikTok Campaign</h3>
+      <p>Performance-focused ad campaign with 33% CTR and optimized audience targeting through learning phase analysis.</p>
+    </div>
+  </section>
+
+  <section class="section" id="strategies">
+    <h2>Marketing Strategies</h2>
+    <div class="project">
+      <h3>Home Services App (KSA)</h3>
+      <p>Targeted families in major cities through Snapchat & Meta ads, achieving high engagement and low CPC.</p>
+    </div>
+    <div class="project">
+      <h3>Software Company – B2B Strategy</h3>
+      <p>LinkedIn & Google Ads campaigns focusing on lead generation for SMEs.</p>
+    </div>
+    <div class="project">
+      <h3>Fashion E-Commerce (GCC)</h3>
+      <p>Influencer marketing + SEO content strategy to grow monthly sales by 50%.</p>
+    </div>
+  </section>
+
+  <section class="section" id="reports">
+    <h2>Reports & Analytics</h2>
+    <div class="project">
+      <h3>Google Search Ads – Legal Services</h3>
+      <p>Keyword optimization & performance tracking for "مأذون شرعي" campaign using Google Tag & CTR analysis.</p>
+    </div>
+    <div class="project">
+      <h3>TikTok Ads Analysis – Planera</h3>
+      <p>Detailed CTR, CPC, and conversion tracking across multiple creative variations.</p>
+    </div>
+  </section>
+
+  <section class="section" id="ux">
+    <h2>UX/UI & Performance</h2>
+    <div class="project">
+      <h3>UserX Academy Website Optimization</h3>
+      <p>Improved site speed from 36/100 to 85/100 by optimizing assets, layout shift, and SEO elements.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">© 2025 Ammar Alorabi</footer>
+
+<script>
+(function(){
+  let currentLang = localStorage.getItem('lang') || 'en';
+  const htmlTag = document.getElementById('htmlTag');
+  const langToggle = document.getElementById('langToggle');
+  const pageTitle = document.getElementById('pageTitle');
+
+  const translations = {
+    en:{
+      pageTitle:"Portfolio",
+      featured:"Featured Projects",
+      strategies:"Marketing Strategies",
+      reports:"Reports & Analytics",
+      ux:"UX/UI & Performance"
+    },
+    ar:{
+      pageTitle:"الأعمال والمشاريع",
+      featured:"المشاريع المميزة",
+      strategies:"الاستراتيجيات التسويقية",
+      reports:"التقارير والتحليلات",
+      ux:"تحسين تجربة المستخدم"
+    }
+  };
+
+  function applyLang(lang){
+    htmlTag.lang = lang;
+    document.body.dir = lang==='ar'?'rtl':'ltr';
+    pageTitle.textContent = translations[lang].pageTitle;
+    document.querySelector("#featured h2").textContent = translations[lang].featured;
+    document.querySelector("#strategies h2").textContent = translations[lang].strategies;
+    document.querySelector("#reports h2").textContent = translations[lang].reports;
+    document.querySelector("#ux h2").textContent = translations[lang].ux;
+    langToggle.textContent = lang==='en'?'AR | EN':'EN | AR';
+  }
+
+  window.addEventListener('DOMContentLoaded',()=>applyLang(currentLang));
+  langToggle.addEventListener('click',()=>{
+    currentLang = currentLang==='en'?'ar':'en';
+    localStorage.setItem('lang',currentLang);
+    applyLang(currentLang);
+  });
+})();
+</script>
+</body>
+</html>
