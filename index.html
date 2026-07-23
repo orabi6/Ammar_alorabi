@@ -64,10 +64,11 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
     <div class="contact" aria-label="contact">
       <p id="contactLabel">📞 Contact Numbers:</p>
-      <p><a href="https://wa.me/201503886599" class="number" target="_blank">+20 150 388 6599</a></p>
-      <p><a href="https://wa.me/201515829936" class="number" target="_blank">+20 151 582 9936</a></p>
+      <p><a href="https://wa.me/966502209062" class="number" target="_blank">+966 50 220 9062</a></p>
       <p id="emailLabel">✉️ Email:</p>
       <p><a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com</a></p>
+      <p id="instagramLabel">📷 Instagram:</p>
+      <p><a href="https://www.instagram.com/ammaralorabi.adv" target="_blank">@ammaralorabi.adv</a></p>
     </div>
   </div>
 </main>
@@ -89,14 +90,16 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
       subtitle: "Specialist in digital marketing, e-commerce management, and (SEO) — developing effective marketing strategies that achieve real growth and consistent sales.",
       about: "I have been working in digital marketing and e-commerce management since 2019, with experience in advertising campaign management, (SEO) optimization, and performance analysis. Certified in SEO improvement and e-store creation across several platforms, focusing on building effective marketing strategies that achieve real growth and sustainable sales for brands.",
       contact: "📞 Contact Numbers:",
-      email: "✉️ Email:"
+      email: "✉️ Email:",
+      instagram: "📷 Instagram:"
     },
     ar: {
       name: "عمار العرابي <span class='sep'>|</span> مسوّق رقمي ومدير متاجر إلكترونية",
       subtitle: "متخصص في التسويق الرقمي، إدارة المتاجر الإلكترونية، أعمل على تطوير، (SEO) وتحسين محركات البحث استراتيجيات تسويق فعالة تحقق نموًا حقيقيًا ومبيعات مستمرة.",
       about: "أعمل في مجال التسويق الرقمي وإدارة المتاجر الإلكترونية منذ عام 2019، بخبرة تشمل تحسين إدارة الحملات الإعلانية، (SEO) محركات البحث وتحليل الأداء. حاصل على شهادات في تحسين السيو وإنشاء المتاجر الإلكترونية على عدة منصات، وأركز على بناء استراتيجيات تسويق فعالة تحقق نموًا حقيقيًا ومبيعات مستمرة للعلامات التجارية.",
       contact: "📞 أرقام التواصل:",
-      email: "✉️ البريد الإلكتروني:"
+      email: "✉️ البريد الإلكتروني:",
+      instagram: "📷 انستجرام:"
     }
   };
 
@@ -108,6 +111,7 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     document.getElementById('aboutText').innerHTML = translations[lang].about;
     document.getElementById('contactLabel').innerHTML = translations[lang].contact;
     document.getElementById('emailLabel').innerHTML = translations[lang].email;
+    document.getElementById('instagramLabel').innerHTML = translations[lang].instagram;
     langToggle.textContent = lang === 'en' ? 'AR | EN' : 'EN | AR';
   }
 
