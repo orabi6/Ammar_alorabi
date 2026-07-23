@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orabi6.github.io/Ammar_alorabi/sitemap.xml
