@@ -46,8 +46,16 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 .t-name{color:var(--accent);font-weight:700;font-size:14px}
 .t-gallery{margin-top:24px;text-align:center}
 .t-gallery h3{font-size:18px;margin-bottom:14px}
-.t-gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.t-gallery-grid img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.08);display:block}
+.t-slider{position:relative;overflow:hidden}
+.t-slider-track{display:flex;transition:transform 0.35s ease}
+.t-slide{flex:0 0 25%;padding:0 6px;box-sizing:border-box}
+.t-slide img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.08);display:block}
+.t-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.55);color:#fff;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;line-height:36px;z-index:2}
+.t-arrow.next{right:4px}
+.t-arrow.prev{left:4px}
+@media(max-width:800px){
+  .t-slide{flex:0 0 100%}
+}
 .lang-toggle{position:fixed;top:12px;right:12px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
 .nav{display:flex;gap:18px;justify-content:center;padding:12px 0;flex-wrap:wrap}
 .nav-item{color:var(--link);text-decoration:none;font-weight:600;white-space:nowrap}
@@ -171,17 +179,21 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
       </div>
       <div class="t-gallery">
         <h3>📸 لقطات من تقييمات العملاء على خمسات</h3>
-        <div class="t-gallery-grid">
-          <img src="assets/testimonials/review-1.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-2.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-3.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-4.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-5.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-6.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-7.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-8.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-9.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
-          <img src="assets/testimonials/review-10.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy">
+        <div class="t-slider">
+          <button class="t-arrow prev" id="tPrev" aria-label="السابق">›</button>
+          <div class="t-slider-track" id="tTrack">
+            <div class="t-slide"><img src="assets/testimonials/review-1.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-2.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-3.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-4.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-5.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-6.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-7.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-8.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-9.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+            <div class="t-slide"><img src="assets/testimonials/review-10.png" alt="تقييم عميل لعمار العرابي على خمسات" loading="lazy"></div>
+          </div>
+          <button class="t-arrow next" id="tNext" aria-label="التالي">‹</button>
         </div>
       </div>
     </div>
@@ -230,7 +242,39 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
     langToggle.textContent = lang === 'en' ? 'AR | EN' : 'EN | AR';
   }
 
-  window.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
+  window.addEventListener('DOMContentLoaded', () => {
+    applyLang(currentLang);
+
+    const track = document.getElementById('tTrack');
+    const prevBtn = document.getElementById('tPrev');
+    const nextBtn = document.getElementById('tNext');
+    if (track && prevBtn && nextBtn) {
+      const slides = track.children.length;
+      let index = 0;
+
+      function update() {
+        const slideWidth = track.children[0].getBoundingClientRect().width;
+        track.style.transform = 'translateX(-' + (index * slideWidth) + 'px)';
+      }
+
+      function visibleCount() {
+        return window.innerWidth <= 800 ? 1 : 4;
+      }
+
+      nextBtn.addEventListener('click', () => {
+        const maxIndex = slides - visibleCount();
+        index = Math.min(index + 1, maxIndex > 0 ? maxIndex : 0);
+        update();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        index = Math.max(index - 1, 0);
+        update();
+      });
+
+      window.addEventListener('resize', update);
+    }
+  });
 
   langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'ar' : 'en';
