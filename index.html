@@ -309,7 +309,7 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
   </div>
 </main>
 
-<footer class="footer">© 2025 Ammar Alorabi</footer>
+<footer class="footer">© 2026 Ammar Alorabi</footer>
 
 <script>
 (function(){
@@ -371,12 +371,15 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 
     nextBtn.addEventListener('click', () => {
       const maxIndex = slides - visibleCount();
-      index = Math.min(index + 1, maxIndex > 0 ? maxIndex : 0);
+      const clampedMax = maxIndex > 0 ? maxIndex : 0;
+      index = index >= clampedMax ? 0 : index + 1;
       update();
     });
 
     prevBtn.addEventListener('click', () => {
-      index = Math.max(index - 1, 0);
+      const maxIndex = slides - visibleCount();
+      const clampedMax = maxIndex > 0 ? maxIndex : 0;
+      index = index <= 0 ? clampedMax : index - 1;
       update();
     });
 
