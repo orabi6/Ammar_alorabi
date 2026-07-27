@@ -123,6 +123,12 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
 .quiz-result{margin-top:16px;background:#0b0f14;border-radius:10px;padding:16px;text-align:center;display:none}
 .quiz-result.show{display:block}
 .quiz-result .big{font-size:20px;font-weight:800;color:var(--accent)}
+
+.mini-card{background:var(--panel);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:18px;margin-top:16px;text-align:center;max-width:280px;margin-left:auto;margin-right:auto}
+.mini-card h3{margin:0 0 10px;font-size:16px}
+.mini-card img.qr{width:130px;height:130px;border-radius:8px;background:#fff;padding:5px;display:block;margin:0 auto 10px}
+.mini-card .save-btn{display:inline-block;background:var(--accent);color:#04140a;font-weight:700;text-decoration:none;padding:9px 16px;border-radius:8px;font-size:13px}
+.mini-card p{font-size:11px;color:var(--muted);margin:8px 0 0}
 </style>
 </head>
 <body>
@@ -176,7 +182,14 @@ h1.name .sep{margin:0 10px;color:var(--muted)}
       <p><a href="mailto:orabi.am6@gmail.com">orabi.am6@gmail.com</a></p>
       <p id="instagramLabel">📷 Instagram:</p>
       <p><a href="https://www.instagram.com/ammaralorabi.adv" target="_blank">@ammaralorabi.adv</a></p>
-      <p><a href="card.html">🪪 بطاقة التعارف الرقمية</a></p>
+      <p><a href="card.html">🪪 بطاقة التعارف الرقمية (فتح كصفحة مستقلة)</a></p>
+
+      <div class="mini-card">
+        <h3>📇 بطاقتي الرقمية</h3>
+        <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Forabi6.github.io%2FAmmar_alorabi%2Fcard.html" alt="QR Code لبطاقة عمار العرابي">
+        <a class="save-btn" href="assets/Ammar_Alorabi.vcf" download>⬇️ حفظ جهة الاتصال</a>
+        <p>امسح الكود لمشاركة بطاقتي مع أي شخص فوراً</p>
+      </div>
     </div>
 
     <div class="tool-section">
